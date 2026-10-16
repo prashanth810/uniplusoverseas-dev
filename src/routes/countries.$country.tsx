@@ -219,10 +219,10 @@ function CountryPage() {
                 </section>
 
                 {/* ───────── Country switcher ───────── */}
-                <div className="relative z-10 mx-auto -mt-9 flex max-w-4xl justify-center px-4">
+                <div className="relative z-10 mx-auto -mt-9 flex max-w-6xl justify-center px-4">
                     <nav
                         aria-label="Choose a country"
-                        className="flex flex-wrap items-center justify-center gap-1.5 rounded-[2rem] border border-border bg-background p-1.5 shadow-xl shadow-navy/15"
+                        className="cp-switcher flex max-w-full flex-nowrap items-center justify-start gap-1.5 overflow-x-auto rounded-full border border-border bg-background p-1.5 shadow-xl shadow-navy/15 lg:justify-center"
                     >
                         {COUNTRY_ORDER.map((slug) => {
                             const item = COUNTRIES[slug];
@@ -234,7 +234,7 @@ function CountryPage() {
                                     params={{ country: slug }}
                                     aria-current={active ? "page" : undefined}
                                     className={
-                                        "cp-pill inline-flex items-center gap-2 rounded-full px-3.5 py-2.5 text-sm font-bold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:px-5 " +
+                                        "cp-pill inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-full px-3.5 py-2.5 text-sm font-bold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:px-4 " +
                                         (active
                                             ? "bg-primary text-primary-foreground shadow-md shadow-primary/30"
                                             : "text-navy hover:bg-muted")

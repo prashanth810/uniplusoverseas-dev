@@ -154,6 +154,15 @@
 }
 
 /* Country switcher */
+.country-page .cp-switcher {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.country-page .cp-switcher::-webkit-scrollbar {
+    display: none;
+}
+
 .country-page .cp-pill {
     transition: background 250ms ease, color 250ms ease, transform 250ms ease;
 }
