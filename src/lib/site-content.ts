@@ -153,7 +153,7 @@ export const TESTIMONIALS = {
   reviews: [
     {
       name: "Donthoji Santhosh Kumar",
-      text: "Uni Pulse Overseas provided exceptional support with my student visa, accommodation, and even provided a sim card for my arrival. Their forex service, immigration support, and test preparation was invaluable. I couldn't have asked for a better study abroad experience. Highly recommend their services to anyone looking to study abroad.",
+      text: "Uniplus Overseas provided exceptional support with my student visa, accommodation, and even provided a sim card for my arrival. Their forex service, immigration support, and test preparation was invaluable. I couldn't have asked for a better study abroad experience. Highly recommend their services to anyone looking to study abroad.",
     },
     {
       name: "Shiva Sandy",

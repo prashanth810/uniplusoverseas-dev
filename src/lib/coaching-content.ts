@@ -104,7 +104,7 @@ export const TESTS: Record<TestSlug, TestContent> = {
         highlights: ["Academic & General Training", "Weekend & evening classes", "Speaking practice"],
         overview: [
             "Whether you need help with complex texts, writing coherence and cohesion, or speaking fluency and pronunciation, our tailored coaching helps you feel confident and well-prepared for your academic or immigration goals.",
-            "You get a personalised plan built around your strengths and weaknesses, regular mock tests and feedback sessions, and study materials covering every section.",
+            "You get a personalized plan built around your strengths and weaknesses, regular mock tests and feedback sessions, and study materials covering every section.",
         ],
         sections: ["Listening", "Reading", "Writing", "Speaking"],
         coversHeading: "What our IELTS program covers",
@@ -225,9 +225,9 @@ export function getTest(slug: string): TestContent | undefined {
 
 /** Shared across every test. {test} is filled in by the page. */
 export const COACH_STEPS = [
-    { title: "Assess", text: "We check your current level and your target {test} score." },
-    { title: "Plan", text: "A customised study plan built around your strengths and weaknesses." },
-    { title: "Practise", text: "Classes, study materials and mock tests that simulate the real exam." },
+    { title: "Assess", text: "We assess your current level and your target {test} score." },
+    { title: "Plan", text: "A customized study plan built around your strengths and weaknesses." },
+    { title: "Practice", text: "Classes, study materials and mock tests that simulate the real exam." },
     { title: "Improve", text: "Feedback after every test until you are ready for exam day." },
 ] as const;
 
