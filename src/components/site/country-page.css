@@ -1,0 +1,201 @@
+/* Country page styles — scoped under .country-page so nothing else changes. */
+
+.country-page .cp-hero {
+    background:
+        radial-gradient(1200px 500px at 85% -10%, color-mix(in oklab, var(--primary) 28%, transparent), transparent 60%),
+        linear-gradient(135deg, var(--navy-deep), var(--navy));
+}
+
+.country-page .cp-grid {
+    background-image:
+        linear-gradient(color-mix(in oklab, white 6%, transparent) 1px, transparent 1px),
+        linear-gradient(90deg, color-mix(in oklab, white 6%, transparent) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse at 30% 40%, black 20%, transparent 75%);
+}
+
+.country-page .cp-orb {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(70px);
+    opacity: 0.45;
+    animation: cp-drift 14s ease-in-out infinite alternate;
+}
+
+.country-page .cp-orb-a {
+    width: 22rem;
+    height: 22rem;
+    left: -6rem;
+    top: -4rem;
+    background: var(--primary);
+}
+
+.country-page .cp-orb-b {
+    width: 18rem;
+    height: 18rem;
+    right: 8%;
+    bottom: -6rem;
+    background: oklch(0.6 0.15 250);
+    animation-delay: -6s;
+}
+
+@keyframes cp-drift {
+    from {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+
+    to {
+        transform: translate3d(40px, 30px, 0) scale(1.15);
+    }
+}
+
+/* Hero entrance — replays whenever the country changes (parent uses key) */
+.country-page .cp-rise {
+    opacity: 0;
+    transform: translateY(24px);
+    animation: hero-rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.country-page .cp-photo {
+    opacity: 0;
+    transform: scale(0.94) rotate(1.5deg);
+    animation: cp-photo-in 1s cubic-bezier(0.22, 1, 0.36, 1) 0.25s forwards;
+}
+
+@keyframes cp-photo-in {
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+.country-page .cp-float {
+    animation: cp-float 5s ease-in-out infinite;
+}
+
+.country-page .cp-float-slow {
+    animation: cp-float 7s ease-in-out -2s infinite;
+}
+
+@keyframes cp-float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.country-page .cp-accent {
+    background: linear-gradient(90deg, var(--primary), oklch(0.82 0.14 70), var(--primary));
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: cp-shimmer 5s linear infinite;
+}
+
+@keyframes cp-shimmer {
+    to {
+        background-position: -200% 0;
+    }
+}
+
+/* Cards */
+.country-page .cp-card {
+    position: relative;
+    transition: transform 300ms ease, box-shadow 300ms ease, border-color 300ms ease;
+}
+
+.country-page .cp-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(160deg, color-mix(in oklab, var(--primary) 10%, transparent), transparent 55%);
+    opacity: 0;
+    transition: opacity 300ms ease;
+    pointer-events: none;
+}
+
+.country-page .cp-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--primary);
+    box-shadow: 0 20px 40px color-mix(in oklab, var(--navy) 12%, transparent);
+}
+
+.country-page .cp-card:hover::before {
+    opacity: 1;
+}
+
+.country-page .cp-card:hover .cp-icon {
+    transform: rotate(-6deg) scale(1.1);
+    background: var(--primary);
+    color: white;
+}
+
+.country-page .cp-icon {
+    transition: transform 300ms ease, background 300ms ease, color 300ms ease;
+}
+
+/* Process timeline */
+.country-page .cp-line {
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.2s;
+}
+
+.country-page .is-visible .cp-line,
+.country-page .cp-line.is-visible {
+    transform: scaleX(1);
+}
+
+/* Country switcher */
+.country-page .cp-pill {
+    transition: background 250ms ease, color 250ms ease, transform 250ms ease;
+}
+
+.country-page .cp-pill:hover {
+    transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .country-page .cp-orb,
+    .country-page .cp-float,
+    .country-page .cp-float-slow,
+    .country-page .cp-accent {
+        animation: none;
+    }
+
+    .country-page .cp-accent {
+        color: var(--primary);
+        background: none;
+    }
+
+    .country-page .cp-rise,
+    .country-page .cp-photo {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+
+    .country-page .cp-line {
+        transform: none;
+        transition: none;
+    }
+
+    .country-page .cp-card,
+    .country-page .cp-icon,
+    .country-page .cp-pill {
+        transition: none;
+    }
+
+    .country-page .cp-card:hover,
+    .country-page .cp-pill:hover {
+        transform: none;
+    }
+}
